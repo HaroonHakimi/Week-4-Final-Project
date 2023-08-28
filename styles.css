@@ -9,6 +9,7 @@
     color: #242424;
 }
 
+
 html
 {
     scroll-behavior: smooth;
@@ -33,9 +34,8 @@ button
     background-color: transparent;
 }
 
-button:hover
+.search__button:hover
 {
-    color: grey;
     transform: scale(1.2);
 }
 
@@ -49,7 +49,7 @@ button:hover
 
 .container
 {
-    margin: 40px 0;
+    padding: 64px 0;
 }
 
 h2, h3, h4, a
@@ -63,7 +63,6 @@ h2, h3, h4, a
 }
 
 /* NAV */
-
 
 .nav__container
 {
@@ -89,17 +88,22 @@ h2, h3, h4, a
     padding: 0 12px;
 }
 
+.nav__link
+{
+    font-size: 20px;
+}
+
 .link__hover
 {
     position: relative;
 }
 
-.link__hover::after
+.link__hover:after
 {
     content: "";
     position: absolute;
     bottom: -4px;
-    height: 3px;
+    height: 1px;
     width: 0;
     right: 0;
     transition: all 300ms ease;
@@ -122,6 +126,7 @@ h2, h3, h4, a
 .logo__name
 {
     margin-left: 12px;
+    font-size: 32px;
 }
 
 .nav__main
@@ -133,7 +138,7 @@ h2, h3, h4, a
 
 .nav__main--title
 {
-    font-size: 64px;
+    font-size: 86px;
     letter-spacing: 10px;
     margin: 40px 0 32px 0;
 }
@@ -148,7 +153,6 @@ h2, h3, h4, a
     font-size: 30px;
     padding: 24px 40px;
     border-radius: 40px;
-    
 }
 
 .search__button
@@ -162,8 +166,25 @@ h2, h3, h4, a
     background-color: transparent;
 }
 
-.nav__gif--wrapper
+.search__button:hover
 {
+    transform: scale(1.2);
+}
+
+.search__button:active
+{
+    transform: scale(1);
+}
+
+.fa-magnifying-glass
+{
+    transition: all 400ms ease;
+}
+
+
+.fa-magnifying-glass:active
+{
+    color: #c33c3c;
 }
 
 .nav__gif
@@ -172,7 +193,7 @@ h2, h3, h4, a
     overflow: hidden;
     border-radius: 40px;
     box-shadow: 0 12px 12px 12px;
-    animation: gif 2000ms infinite alternate-reverse linear;
+    animation: gif 3000ms infinite alternate-reverse linear;
 }
 
 @keyframes gif 
@@ -187,12 +208,8 @@ h2, h3, h4, a
 
     }
 }
-/* POPULAR */
 
-.popular__container
-{
-    margin-top: 64px;
-}
+/* POPULAR */
 
 .popular__row
 {
@@ -230,4 +247,35 @@ h2, h3, h4, a
 {
     box-shadow: 0 4px 4px 4px rgb(0, 0, 0, 0.3);
     border-radius: 20px;
+}
+
+@media (max-width: 816px)
+{
+    .nav__main--title
+    {
+        font-size: 66px;
+    }
+
+}
+@media (max-width: 690px)
+{
+    .nav__main--title
+    {
+        font-size: 56px;
+    }
+
+    .search__input{
+        font-size: 24px;
+    }
+
+    .logo__name, .nav__link
+    {
+        font-size: 20px;
+    }
+
+    .popular__title
+    {
+        display: flex;
+        justify-content: center;        
+    }
 }

@@ -6,7 +6,7 @@
     <title>Movie Search</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/304ba84b06.js" crossorigin="anonymous"></script>
-    <script src="app.js" defer></script>
+
 </head>
 <body>
     <nav>
@@ -19,21 +19,21 @@
                 </div>
                 <ul class="nav__lists">
                     <li class="nav__list">
-                        <a href="#popular" class="nav__link">
+                        <a href="#popular" class="nav__link link__hover">
                             Popular
                         </a>
                     </li>
                     <li class="nav__list">
-                        <a href="#" class="nav__link">
-                            Trending
+                        <a href="#newest" class="nav__link link__hover">
+                            Newest
                         </a>
                     </li>
                 </ul>
             </div>
             <div class="nav__main row">
                 <h1 class="nav__main--title">Browse Our <span class="red">Movies.</span></h1>
-                <div class="search">
-                    <input type="text" placeholder="Your Movie" class="search__input" maxlength="18"></input>
+                <div class="search" >
+                    <input type="text" placeholder="Search" class="search__input" maxlength="18" onchange="onSearchChange(event)">
                     <button class="search__button"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </div>
@@ -47,38 +47,35 @@
 
 
     <section id="popular">
-        <div class="container popular__container">
+        <div class="container ">
             <div class="row popular__row">
                 <div class="section__title">
                     <h2 class="popular__title">Popular</h2>
                 </div>
                 <ul class="popular__movies movies">
-                    <li class="popular__movie movie">
-                        <figure class="movie__img--wrapper">
-                            <img src="./assets/MV5BMTM3NTg2NDQzOF5BMl5BanBnXkFtZTcwNjc2NzQzOQ@@._V1_SX300.jpg" class="movie__img" alt=""> 
-                        </figure>
-                        <h2 class="popular__movie--title movie__title">Fast</h2>
-                    </li>
+                    
                 </ul>
             </div>
         </div>
     </section>
-    <section id="Trending">
+    <section id="newest">
         <div class="container">
             <div class="row popular__row">
                 <div class="section__title">
-                    <h2 class="popular__title">Trending</h2>
+                    <h2 class="popular__title">newest</h2>
                 </div>
-                <ul class="trending__movies movies">
-                    <li class="trending__movie movie">
+                <ul class="newest__movies movies">
+                    <li class="newest__movie movie">
                         <figure class="movie__img--wrapper">
                             <img src="./assets/MV5BMTM3NTg2NDQzOF5BMl5BanBnXkFtZTcwNjc2NzQzOQ@@._V1_SX300.jpg" class="movie__img" alt=""> 
                         </figure>
-                        <h2 class="trending__movie--title movie__title">Fast</h2>
+                        <h2 class="newest__movie--title movie__title">Fast</h2>
                     </li>
                 </ul>
             </div>
         </div>
     </section>
+    <script src="app.js" ></script>
 </body>
+
 </html>
