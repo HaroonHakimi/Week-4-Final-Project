@@ -32,6 +32,7 @@ button
     cursor: pointer;
     transition: 300ms ease;
     background-color: transparent;
+    border: none;
 }
 
 .search__button:hover
@@ -60,6 +61,11 @@ h2, h3, h4, a
 .red 
 {
     color: #c33c3c;
+}
+
+.white
+{
+    color: #fff;
 }
 
 /* NAV */
@@ -222,12 +228,18 @@ h2, h3, h4, a
     flex-direction: column;
 }
 
-.popular__title
+.movie__title
 {
     font-size: 28px;
 }
 
 .movies
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.popular__movies
 {
     display: flex;
     flex-wrap: wrap;
@@ -254,6 +266,26 @@ h2, h3, h4, a
     border-radius: 20px;
 }
 
+/* FOOTER */
+
+footer
+{
+    background-color: #242424;
+}
+
+.footer__row
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright__text
+{
+    margin: 20px;
+}
+
 @media (max-width: 816px)
 {
     .nav__main--title
@@ -278,7 +310,7 @@ h2, h3, h4, a
         font-size: 20px;
     }
 
-    .popular__title
+    .movie__title
     {
         display: flex;
         justify-content: center;        
