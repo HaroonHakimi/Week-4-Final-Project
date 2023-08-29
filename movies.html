@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Search</title>
+    <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="movies.js" defer></script>
     <script src="https://kit.fontawesome.com/304ba84b06.js" crossorigin="anonymous"></script>
-
-
 </head>
 <body>
     <nav>
-        
         <div class="nav__container container">
             <div class="nav__row row">
                 <div class="logo">
@@ -25,42 +23,19 @@
                         </a>
                     </li>
                     <li class="nav__list">
-                        <a href="#newest" class="nav__link link__hover" onclick="bringUserHome()">
-                            Home
+                        <a href="#newest" class="nav__link link__hover">
+                            Newest
                         </a>
                     </li>
                 </ul>
             </div>
-            <div class="nav__main row">
-                <h1 class="nav__main--title">Browse Our <span class="red">Movies.</span></h1>
-                <div class="search" >
+            <div class="nav__main row nav__main--second">
+                <div class="search">
                     <input type="text" placeholder="Search" class="search__input" maxlength="18" onchange="onSearchChange(event)">
                     <button class="search__button"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </div>
-
-            <figure class="nav__gif">
-                <img src="./assets/movie-spongebob.gif" alt="">
-            </figure>
         </div>
-
     </nav>
-
-
-    <section id="popular">
-        <div class="container ">
-            <div class="row popular__row">
-                <div class="section__title">
-                    <h2 class="popular__title">Popular</h2>
-                </div>
-                <ul class="popular__movies movies">
-                    
-                </ul>
-            </div>
-        </div>
-    </section>
-    
-<script src="app.js" ></script>
 </body>
-
 </html>

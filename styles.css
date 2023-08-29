@@ -136,6 +136,11 @@ h2, h3, h4, a
     align-items: center;
 }
 
+.nav__main--second
+{
+    margin-top: 64px;
+}
+
 .nav__main--title
 {
     font-size: 86px;
@@ -261,7 +266,7 @@ h2, h3, h4, a
 {
     .nav__main--title
     {
-        font-size: 56px;
+        font-size: 48px;
     }
 
     .search__input{
@@ -277,5 +282,13 @@ h2, h3, h4, a
     {
         display: flex;
         justify-content: center;        
+    }
+}
+
+@media (max-width: 570px)
+{
+    .nav__main--title
+    {
+        text-align: center;
     }
 }

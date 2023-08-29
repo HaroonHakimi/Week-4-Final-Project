@@ -2,28 +2,35 @@ const moviesList = document.querySelector(`.movies`);
 const API_KEY = "5c0a8d0";
 let search = "";
 
+// async function movieSearch()
+// {
+//     const movies = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${search}`)
+//     const moviesData = await movies.json()
+//     console.log(moviesData)
+//     moviesList.innerHTML = [moviesData].map((movie) => movieHTML(movie))
+// }
+
+// movieSearch()
+
 function onSearchChange(event)
 {
     const search = event.target.value
-    movieSearch(search)
+    localStorage.setItem("search", search)
+    openMovies(search)
 }
 
-async function movieSearch()
+function openMovies()
 {
-    const url = `https://www.omdbapi.com/?apikey=${API_KEY}&s=${search}`
-    const movies = await fetch(url)
-    const moviesData = await response.json()
-    console.log(moviesData)
+    window.localStorage.href = `${window.location.origin}/movies.html`
 }
 
-
-function movieHTML()
-{
-   return `<li class="popular__movie movie">
-        <figure class="movie__img--wrapper">
-            <img src="${moviesData.Poster}" class="movie__img" alt="">
-        </figure>
-        <h2 class="popular__movie--title movie__title">${moviesData.Title}</h2>
-    </li>`
-}
+// function movieHTML(movie)
+// {
+//    return `<li class="popular__movie movie">
+//         <figure class="movie__img--wrapper">
+//             <img src="${movie.Poster}" class="movie__img" alt="">
+//         </figure>
+//         <h2 class="popular__movie--title movie__title">${movie.Title}</h2>
+//     </li>`
+// }
 
