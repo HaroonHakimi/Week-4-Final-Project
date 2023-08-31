@@ -6,7 +6,7 @@
     <title>Movie Search</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/304ba84b06.js" crossorigin="anonymous"></script>
-
+    <script src="app.js" defer></script>
 
 </head>
 <body>
@@ -20,8 +20,8 @@
                 </div>
                 <ul class="nav__lists">
                     <li class="nav__list">
-                        <a href="#popular" class="nav__link link__hover">
-                            Popular
+                        <a href="#search" class="nav__link link__hover">
+                            Search
                         </a>
                     </li>
                     <li class="nav__list">
@@ -32,11 +32,11 @@
                 </ul>
             </div>
             <div class="nav__main row">
-                <h1 class="nav__main--title">Browse Our <span class="red">Movies.</span></h1>
-                <div class="search">
+                <h1 class="nav__main--title" id="search">Browse Our <span class="red">Movies.</span></h1>
+                <form class="search" onsubmit="renderMovies(event)">
                     <input type="text" placeholder="Search" class="search__input" maxlength="18">
-                    <button class="search__button" onclick="onSearchChange(event)"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
+                    <button class="search__button"><i class="fa-solid fa-magnifying-glass" onclick="renderMovies()"></i></button>
+                </form>
             </div>
 
             <figure class="nav__gif">
@@ -51,11 +51,24 @@
         <div class="container ">
             <div class="row popular__row">
                 <div class="section__title">
-                    <h2 class="movie__title">Popular</h2>
+                    <h2 class="movie__title">Search Results for: </h2>
+                    <select 
+                    id="filter"
+                    class="filter__movies"
+                    onchange="filterMovies(event)"
+                    >
+                        <option value="" disabled selected>Sort</option>
+                        <option value="NEW_TO_OLD">Newest to Oldest</option>
+                        <option value="OLD_TO_NEW">Oldest to Newest</option>
+                    </select>
                 </div>
-                <ul class="popular__movies">
+                <div class="movies">
                     
-                </ul>
+                </div>
+
+                <div class="movies__loading">
+                    <i class="fa-solid fa-spinner"></i>
+                </div>
             </div>
         </div>
     </section>
@@ -70,8 +83,8 @@
                 <h4 class="copyright__text white">Copyright &copy; Haroon Hakimi</h4>
                 <ul class="nav__lists">
                     <li class="nav__list">
-                        <a href="#popular" class="nav__link link__hover white">
-                            Popular
+                        <a href="#search" class="nav__link link__hover white">
+                            search
                         </a>
                     </li>
                     <li class="nav__list">
@@ -81,8 +94,6 @@
             </div>
         </div>
     </footer>
-    
-<script src="app.js" ></script>
 </body>
 
 </html>

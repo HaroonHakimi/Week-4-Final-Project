@@ -222,6 +222,19 @@ h2, h3, h4, a
 
 /* POPULAR */
 
+.section__title
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter__movies
+{
+    font-size: 24px;
+    border-radius: 20px;
+    padding: 8px 12px;
+}
+
 .popular__row
 {
     display: flex;
@@ -230,16 +243,10 @@ h2, h3, h4, a
 
 .movie__title
 {
-    font-size: 28px;
+    font-size: 36px;
 }
 
 .movies
-{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.popular__movies
 {
     display: flex;
     flex-wrap: wrap;
@@ -264,6 +271,33 @@ h2, h3, h4, a
 {
     box-shadow: 0 4px 4px 4px rgb(0, 0, 0, 0.3);
     border-radius: 20px;
+}
+
+.movies__loading
+{
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 96px 0;
+}
+
+.fa-spinner
+{
+    animation: spinner 750ms infinite linear;
+    color: #c33c3c;
+}
+
+@keyframes spinner 
+{
+    0%
+    {
+        transform: rotate(0);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
 }
 
 /* FOOTER */

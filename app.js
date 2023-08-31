@@ -1,63 +1,47 @@
-const API_KEY = "5c0a8d0";
 let search = "";
 const moviesWrapper = document.querySelector(`.movies`)
-const searchBarInput = document.querySelector(`.search__results`)
+moviesWrapper.classList += (` movies__loading`)
+moviesWrapper.classList.remove(`movies__loading`)
 
-function onSearchChange(event)
+
+async function renderMovies(filter)
 {
-    const search = event.target.value
-    localStorage.setItem("search", movieSearch)
-    window.location.href = `${window.location.origin}/movies.html`
-    movieSearch(search)
-}
+    const searchInput = document.querySelector(`.search__input`)
+    const query = searchInput.value
 
-function bringUserHome()
-{
-    window.location.href = `${window.location.origin}/index.html`;
-}
+    moviesWrapper.classList.add(`movies__loading`)
+    setTimeout(1000)
 
-
-async function movieSearch()
-{
-    const movies = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${search}`)
+    const movies = await fetch(`https://www.omdbapi.com/?apikey=5c0a8d0&s=${query}`)
     const moviesData = await movies.json()
-    console.log(moviesData)
-    
-}
+    const moviesArray = moviesData.Search;
 
-function renderMovies()
-{
-    const moviesHTML = moviesData.map(movie => 
-        {
-        return `<li class="popular__movie movie">
-                    <figure class="movie__img--wrapper">
-                        <img src="${movie.Poster}" class="movie__img" alt="">
-                    </figure>
-                    <h2 class="popular__movie--title movie__title">${movie.Title}</h2>
-                </li>`
-        })
-    moviesWrapper.innerHTML = moviesHTML
-    console.log(moviesHTML)
-}
+    moviesWrapper.innerHTML = moviesArray.map((movie) => getMoviesHTML(movie)).join("")
 
-
-//
-function searchBasedOnText()
-{
-    const searchInput = document.getElementsByClassName(`search__input`).value
-    const searchText = `<h3 class="search__results">Search Results for ${searchInput}}</h3>`
-    searchBarInput.innerHTML = searchText
-    renderMovies(searchInput)
-}
-
-
-// Can use enter button to submit
-function searchByEnter()
-{
-    const searchForm = document.getElementsByClassName(`search`)
-    searchForm.addEventListener("submit", function(event)
+    if (filter === `NEW_TO_OLD`)
     {
-        event.preventDefault()
-        searchBasedOnText()
-    })
+        moviesArray.sort((a,b) => b.Year - a.Year)
+    }
+    else (filter === `OLD_TO_NEW`)
+    {
+        moviesArray.sort((a,b) => a.Year - b.Year)
+    }
+
+    moviesWrapper.classList.remove("movies__loading");
+}
+
+function filterMovies(event)
+{
+    renderMovies(event.target.value)
+}
+
+
+function getMoviesHTML()
+{
+    return `<div class="popular__movie movie">
+    <figure class="movie__img--wrapper">
+    <img src="${movie.Poster}" class="movie__img" alt="">
+    </figure>
+    <h2 class="popular__movie--title movie__title">${movie.Title}</h2>
+    </div>`
 }
