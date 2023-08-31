@@ -203,7 +203,7 @@ h2, h3, h4, a
     color: #c33c3c;
 }
 
-.nav__gif
+.nav__gif--wrapper
 {
     margin-top: 86px;
     overflow: hidden;
@@ -249,6 +249,7 @@ h2, h3, h4, a
 .movie__title
 {
     font-size: 36px;
+    text-align: center;
 }
 
 
@@ -288,6 +289,7 @@ h2, h3, h4, a
 {
     box-shadow: 0 4px 4px 4px rgb(0, 0, 0, 0.1);
     border-radius: 20px;
+    width: 100%;
 }
 
 .movies__loading
@@ -343,6 +345,12 @@ footer
     {
         font-size: 66px;
     }
+    
+    .movie
+    {
+        width: calc(100% / 2);
+    }
+
 
 }
 @media (max-width: 690px)
@@ -374,4 +382,5 @@ footer
     {
         text-align: center;
     }
+
 }
