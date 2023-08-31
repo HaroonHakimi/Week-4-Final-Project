@@ -39,7 +39,7 @@ function filterMovies(event)
 
 function getMoviesHTML(movie)
 {
-    return `<div class="popular__movie movie">
+    return `<div class="popular__movie movie no__cursor">
     <figure class="movie__img--wrapper">
     <img src="${movie.Poster}" class="movie__img" alt="">
     </figure>
