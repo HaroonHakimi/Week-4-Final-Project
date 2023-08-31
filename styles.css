@@ -99,12 +99,12 @@ h2, h3, h4, a
     font-size: 20px;
 }
 
-.link__hover
+.link__hover--effect
 {
     position: relative;
 }
 
-.link__hover:after
+.link__hover--effect:after
 {
     content: "";
     position: absolute;
@@ -116,6 +116,11 @@ h2, h3, h4, a
     background-color: #c33c3c;
 }
 
+.link__hover--effect:hover:after
+{
+    left: 0;
+    width: 100%;
+}
 
 .logo
 {
@@ -246,10 +251,12 @@ h2, h3, h4, a
     font-size: 36px;
 }
 
+
 .movies
 {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 64px;
 }
 
 .movie 
@@ -264,12 +271,22 @@ h2, h3, h4, a
 .movie__img--wrapper
 {
     padding: 30px 12px 20px;
-    
+    transition: all 300ms ease;
+}
+
+.movie__img--wrapper:hover
+{
+    transform: scale(1.05);
+}
+
+.movie__img--wrapper:hover .movie__img
+{
+    box-shadow: 0 4px 4px 4px rgb(0, 0, 0, 0.5);
 }
 
 .movie__img
 {
-    box-shadow: 0 4px 4px 4px rgb(0, 0, 0, 0.3);
+    box-shadow: 0 4px 4px 4px rgb(0, 0, 0, 0.1);
     border-radius: 20px;
 }
 
